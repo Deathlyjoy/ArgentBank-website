@@ -2,7 +2,7 @@ openapi: 3.0.3
 info:
   title: Bank Argent API documentation
   description: Contains all available API endpoints in this codebase
-  version: '1.0.0'
+  version: '1.1.0'
   termsOfService: 'http://swagger.io/terms/'
 externalDocs:
   description: Find out more about Swagger
@@ -10,16 +10,16 @@ externalDocs:
 servers:
   - url: http://localhost:3001/api/v1
 tags:
-  - name: User Bank Account
+  - name: Transaction Module
 paths:
   /user/bankAccount:
     get:
       tags:
-        - User Bank Account
+        - Transaction Module
       summary: All Bank Accounts Summary
       description: API for read all accounts of the user
       operationId: createUser
-      responses:
+      responses:        
         default:
           description: successful operation
           content:
@@ -28,10 +28,10 @@ paths:
                 $ref: '#/components/schemas/BankAccount'
       security:
         - api_key: []
-  /user/{accountId}:
+  /user/bankAccount/{accountId}:
     get:
       tags:
-        - User Bank Account
+        - Transaction Module
       summary: Account
       description: API for read transactions of the account
       parameters:
@@ -48,7 +48,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AccountIdResponse' 
+                $ref: '#/components/schemas/AccountIdResponse'
+        '401':
+          description: Unauthorized. Invalid or missing token
+        '404':
+          description:  Transaction not found
+        '500':
+          description: Server error
         default:
           description: successful operation
       security:
@@ -58,7 +64,7 @@ paths:
   /user/bankAccount/{transactionId}:
     post:
       tags:
-        - User Bank Account
+        - Transaction Module
       summary: User Transactions API
       description: API for read the transaction selected
       parameters:
@@ -74,7 +80,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TransactionResponse' 
+                $ref: '#/components/schemas/TransactionResponse'
+        '401':
+          description: Unauthorized. Invalid or missing token
+        '404':
+          description:  Transaction not found
+        '500':
+          description: Server error
         default:
           description: successful operation
       security:
@@ -84,9 +96,9 @@ paths:
             - write:bank
     put:
       tags:
-        - User Bank Account
+        - Transaction Module
       summary: User Transactions API
-      description: API for read the transaction selected
+      description: API for update the transaction selected
       parameters:
         - name: transactionId
           in: path
@@ -101,6 +113,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/TransactionResponse' 
+        '401':
+          description: Unauthorized. Invalid or missing token
+        '404':
+          description:  Transaction not found
+        '500':
+          description: Server error
         default:
           description: successful operation
       security:
