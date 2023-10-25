@@ -2,14 +2,14 @@ swagger: '2.0'
 info:
   title: Bank Argent API documentation
   description: Contains all available API endpoints in this codebase
-  version: '1.3.0'
+  version: '1.4.0'
   termsOfService: 'http://swagger.io/terms/'
 host: localhost:3001
 basePath: /api/v1
 schemes:
   - http
 paths:
-  /user/bankaccount:
+  /transaction:
     get:
       tags:
         - Transaction Module
@@ -33,7 +33,7 @@ paths:
           description: Invalid Fields
         '500':
           description: Internal Server Error
-  /user/bankaccount/{accountId}:
+  /transaction/{accountId}:
     get:
       tags:
         - Transaction Module
@@ -57,7 +57,7 @@ paths:
           description: Invalid Fields
         '500':
           description: Internal Server Error
-  /user/{transactionId}:
+  /transaction/{transactionId}:
     get:
       security:
         - Bearer: []
