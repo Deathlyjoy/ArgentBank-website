@@ -10,14 +10,12 @@ function SignIn() {
 
    // States
    const token = useSelector((state) => state.auth.token);
-
    const [username, setUsername] = useState(''); 
    const [password, setPassword] = useState('');
    const [error, setError] = useState('');
 
    // Hooks
    const navigate = useNavigate();
-
 
    // Fonction de gestion des changements de valeur des champs de formulaire
    const handleUsernameChange = (event) => { 
@@ -72,36 +70,29 @@ function SignIn() {
       }
    }, [token, navigate]);
 
-
    return (
       <main>
-         <section className="sign-in">
-            <i className="fa fa-user-circle sign-in-icon"></i>
-
-            <form onSubmit={handleSignIn}>
+         <section className="login">
+            <form class="login__form" onSubmit={handleSignIn}>
+               <div class="form_header">
+                  <i className="fa fa-user-circle sign-in-icon"></i>
+                  <h2>Sign In</h2>
+               </div>
                <div className="input-wrapper">
-                  <label htmlFor="username">Email</label>
+                  <label htmlFor="username">Username</label>
                   <input className={error ? 'sign-in__error-border' : ''} type="email" id="username" value={username} onChange={handleUsernameChange} required/>
                </div>
-
                <div className="input-wrapper">
                   <label htmlFor="password">Password</label>
                   <input className={error ? 'sign-in__error-border' : ''} type="password" id="password" value={password} onChange={handlePasswordChange} required/>
                </div>
-
                {error && <p className="sign-in__error-message">The username or password incorrect</p>}
-
                <div className="input-remember">
                   <input type="checkbox" id="remember-me" />
                   <label htmlFor="remember-me">Remember me</label>
                </div>
-
-
-               <button className="sign-in__button" type="submit">Sign In</button>
+               <button className="login-button" type="submit">Sign In</button>
             </form>
-
-            
-
          </section>
       </main>
    );

@@ -2,19 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 
-
 import { BrowserRouter } from 'react-router-dom';
 
+//---------- REDUX ----------
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './redux/store';
 
-
+//---------- CSS ----------
 import './style/normalize.css';
 import './style/reset.css';
 import './style/index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>
