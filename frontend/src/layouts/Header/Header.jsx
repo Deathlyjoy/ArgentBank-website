@@ -70,17 +70,19 @@ function Header() {
             <ul>
                <li>
                   {!token ? (
-                     <div className='cont-user'>
+                     <div className='nav-links'>
                         <NavLink className='btn-user' to="/signin">
-                           <i className="fa-solid fa-circle-user"> Sign In</i>
+                           <i className="fa-solid fa-circle-user"></i> Sign In
                         </NavLink>
                      </div>
                   ) : (
-                     <div className='cont-user'>
-                        <button className='btn-user' onClick={handleLogout}>Logout</button>
+                     <div className='nav-links'>
                         <NavLink className='btn-user' to="/user">
                            <i className="fas fa-user-circle"></i>
                            <p>{firstname}</p>
+                        </NavLink>
+                        <NavLink className='btn-user' onClick={handleLogout} to="/signin">
+                           <i className="fa-solid fa-arrow-right-from-bracket"></i>Sign Out
                         </NavLink>
                      </div>
                   )}
@@ -92,3 +94,4 @@ function Header() {
 }
  
 export default Header
+//<button className='btn-user' onClick={handleLogout}></button>
