@@ -73,8 +73,8 @@ function SignIn() {
    return (
       <main>
          <section className="login">
-            <form class="login__form" onSubmit={handleSignIn}>
-               <div class="form_header">
+            <form className="login__form" onSubmit={handleSignIn}>
+               <div className="form_header">
                   <i className="fa fa-user-circle sign-in-icon"></i>
                   <h2>Sign In</h2>
                </div>
