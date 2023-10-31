@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from "react-router-dom";
-//import Button from "../../components/Button/Button";
 
 import './user.scss'
 import Transactions from '../../components/Transactions/Transactions'
@@ -80,7 +79,7 @@ function User() {
         <div className="user-welcome-content">
           <h1 className="welcome-title">Welcome back</h1>
           <p className="welcome-names">{firstname} {user}!</p>
-          <button className="transaction-button button" onClick={toggleForm}>Edit name</button>
+          <button className="edit-button" onClick={toggleForm}>Edit name</button>
         </div>
       ) : (
         <div className="user-edit-container">
@@ -99,7 +98,7 @@ function User() {
                <input type="text" id="lastname" value={lastname} disabled/>
             </div>
             <div className="btn-container">
-            <button type="submit" className='transaction-button button'>Confirm</button>
+               <button type="submit" className='edit-button'>Save</button>
             </div>
           </form>
         </div>
@@ -110,3 +109,6 @@ function User() {
 }
  
 export default User
+/*
+
+*/
