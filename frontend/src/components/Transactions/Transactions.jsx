@@ -12,7 +12,7 @@ function Transactions() {
             <p className="account-amount-description">Available Balance</p>
          </div>
 
-         <div className="account-content-wrapper cta">
+         <div className="account-button-wrapper">
             <button className="transaction-button">View transactions</button>
          </div>
          </section>
@@ -24,7 +24,7 @@ function Transactions() {
             <p className="account-amount-description">Available Balance</p>
          </div>
 
-         <div className="account-content-wrapper cta">
+         <div className="account-button-wrapper">
             <button className="transaction-button">View transactions</button>
          </div>
          </section>
@@ -36,7 +36,7 @@ function Transactions() {
             <p className="account-amount-description">Current Balance</p>
          </div>
 
-         <div className="account-content-wrapper cta">
+         <div className="account-button-wrapper">
             <button className="transaction-button">View transactions</button>
          </div>
          </section>
