@@ -1,3 +1,6 @@
+//---------- COMPONENTS ----------
+import Features from "../../components/Features/Features";
+
 //---------- CSS ----------
 import "./home.scss";
 
@@ -23,22 +26,21 @@ function Home() {
          </section>
          {/* Features */}
          <section className="features">
-            <div className="features__item">
-               <img src={iconChat} alt="Chat Icon" className="features__icon" />
-               <h2 className="features__item-title">You are our #1 priority</h2>
-               <p className="features__item-text">Need to talk to a representative? You can get in touch through our 24/7 chat or through a phone call in less than 5 minutes.</p>
-            </div>
-            <div className="features__item">
-               <img src={iconMoney} alt="Money Icon" className="features__icon"/>
-               <h2 className="features__item-title">More savings means higher rates</h2>
-               <p className="features__item-text">The more you save with us, the higher your interest rate will be!</p>
-            </div>
-            <div className="features__item">
-               <img src={iconSecurity} alt="Security Icon" className="features__icon"/>
-               <h2 className="features__item-title">Security you can trust</h2>
-               <p className="features__item-text">We use top of the line encryption to make sure your data and money is always safe.
-               </p>
-            </div>
+            <Features
+               img={iconChat}
+               title="You are our #1 priority"
+               desc="Need to talk to a representative? You can get in touch through our 24/7 chat or through a phone call in less than 5 minutes."
+            />
+            <Features
+               img={iconMoney}
+               title="More savings means higher rates"
+               desc="The more you save with us, the higher your interest rate will be!"
+            />
+            <Features
+               img={iconSecurity}
+               title="Security you can trust"
+               desc="We use top of the line encryption to make sure your data and money is always safe."
+            />
          </section>
       </main>
    )

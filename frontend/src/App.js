@@ -27,9 +27,9 @@ function App() {
           <Route path="/user" element={<User />} />
           <Route path="*" element={<Error />} />
         </Routes>
+
+        <Footer />
       </div>
-      
-      <Footer />
     </>
   );
 }

@@ -60,7 +60,7 @@ function Header() {
       }
       }, [dispatch, token]);
    return (
-      <header class="header">
+      <header className="header">
          {/* Logo */}
          <Link to="/">
                <img className='header__logo' alt='Logo de Argent Bank' src={Logo} />
