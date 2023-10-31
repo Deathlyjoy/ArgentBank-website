@@ -1,100 +1,72 @@
-&nbsp;
-# Argent Bank
+# Argent Bank API
 
-![](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
-![](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
-![](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+This codebase contains the code needed to run the backend for Argent Bank.
 
+## Getting Started
 
-![](https://forthebadge.com/images/badges/built-with-love.svg)
-![](https://forthebadge.com/images/badges/powered-by-coffee.svg)
+### Prerequisites
 
-&nbsp;
+Argent Bank uses the following tech stack:
 
-&nbsp;
-## Description
+- [Node.js v12](https://nodejs.org/en/)
+- [MongoDB Community Server](https://www.mongodb.com/try/download/community)
 
-Projet numéro onze du parcours développeur front-end de chez OpenClassrooms
-
-L'objectif était d'implémentez le front-end d'une application bancaire avec React
-> Pour en savoir plus, retrouvez le brief de mission en bas de page
-
-&nbsp;
-
-## Compétences évaluées
-
-- Créez une application React complète
-
-- Afficher les données du back end sur l'interface via des appels API
- 
-- Configurer des routes API pour la communication client / serveur
- 
-- Implémenter la gestion des données avec Redux pour assurer le fonctionnement du front
-
-&nbsp;
-
-&nbsp;
-## Prérequis
-
-> - [Node.js v12](https://nodejs.org/en/)
-> - [MongoDB Community Server](https://www.mongodb.com/try/download/community)
-
-&nbsp;
+Please make sure you have the right versions and download both packages. You can verify this by using the following commands in your terminal:
 
 ```bash
+# Check Node.js version
 node --version
+
+# Check Mongo version
 mongo --version
 ```
-&nbsp;
-> Si vous n'avez pas la bonne version de node, vous pouvez utiliser Node Version Switcher
-> - [Node Version Switcher](https://github.com/jasongin/nvs)
-&nbsp;
 
+### Instructions
 
-&nbsp;
+1. Fork this repo
+1. Clone the repo onto your computer
+1. Open a terminal window in the cloned project
+1. Run the following commands:
 
-&nbsp;
+```bash
+# Install dependencies
+npm install
 
-## Back-end
+# Start local dev server
+npm run dev:server
 
-> Cloner le repo en local
+# Populate database with two users
+npm run populate-db
+```
 
-> Se rendre dans le dossier ``back-end``
+Your server should now be running at http://locahost:3001 and you will now have two users in your MongoDB database!
 
-> Installer les dépendances: ``yarn install``
+## Populated Database Data
 
-> Lancer le serveur: ``yarn run dev:server``
+Once you run the `populate-db` script, you should have two users in your database:
 
-> Démarrer la BD: ``yarn run populate-db``
+### Tony Stark
 
-&nbsp;
+- First Name: `Tony`
+- Last Name: `Stark`
+- Email: `tony@stark.com`
+- Password: `password123`
 
-## Front
-> Installer les dépendances: ``yarn install``
+### Steve Rogers
 
-> Pour lancer l'application ``yarn start``
+- First Name: `Steve`,
+- Last Name: `Rogers`,
+- Email: `steve@rogers.com`,
+- Password: `password456`
 
-&nbsp;
+## API Documentation
 
-&nbsp;
-## Brief de mission
+To learn more about how the API works, once you have started your local environment, you can visit: http://localhost:3001/api-docs
 
->Créer l’application web complète et responsive avec React. Comme point de départ, nous vous avons fourni le HTML statique et le CSS pour la page d'accueil, la page de connexion et la page de profil.
->Utiliser Redux pour gérer le state de l'ensemble de l'application.
->Ce que doit faire l’application (voir les détails pour chacune des fonctionnalités sur nos modèles de GitHub Issues) :
+## Design Assets
 
->>L'utilisateur peut visiter la page d'accueil.
+Static HTML and CSS has been created for most of the site and is located in: `/designs`.
 
->>L'utilisateur peut se connecter au système.
+For some of the dynamic features, like toggling user editing, there is a mock-up for it in `/designs/wireframes/edit-user-name.png`.
 
->>L'utilisateur peut se déconnecter du système.
-
->>L'utilisateur ne peut voir les informations relatives à son propre profil qu'après s'être connecté avec succès.
-
->>L’utilisateur ne peut pas modifier son nom ni son prénom, mais il peut modifier son pseudo.
-
->Nos ingénieurs back-end ont déjà créé toutes les routes API dont vous avez besoin. Vous trouverez toute la documentation Swagger à l'intérieur du repo.
-&nbsp;
-
-&nbsp;
+And for the API model that you will be proposing for transactitons, the wireframe can be found in `/designs/wireframes/transactions.png`.

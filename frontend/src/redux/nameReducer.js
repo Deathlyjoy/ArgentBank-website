@@ -1,3 +1,4 @@
+// Gestion du profil utilisateur connecté dans le store
 const initialState = {
    username: '',
    firstname: '',

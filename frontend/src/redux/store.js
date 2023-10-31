@@ -6,13 +6,13 @@ import rootReducer from './reducers';
 const reduxDevtools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 
 const persistConfig = {
-   key: 'root', // Clé de persistance, peut être modifiée selon vos besoins
+   key: 'root', // Clé de persistance
    storage,
 
  };
  
-const persistedReducer = persistReducer(persistConfig, rootReducer); // Appliquez la configuration de persistance à votre rootReducer
-const store = createStore(persistedReducer, reduxDevtools);
+const persistedReducer = persistReducer(persistConfig, rootReducer); // Appliquez la configuration de persistance au rootReducer
+const store = createStore(persistedReducer, reduxDevtools); // Creation du store Redux
 const persistor = persistStore(store);
 
 export { store, persistor };
